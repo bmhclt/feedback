@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Feedback Dialler</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">    
+</head>
+<body>
+    <style>
+       .button {
+        background-color: #c12446;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 24px;
+        border-radius: 4px;
+        box-shadow: 0 6px 12px 0 rgba(0,0,0,0.2), 0 6px 14px 0 rgba(0,0,0,0.19);
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;     
+        margin-top: 20%;  
+        width: 60%; 
+        font-weight: bold;
+        }
+        
+        .heading {
+        margin: 0;
+        padding: 20px;
+        padding-bottom: 5px;
+        text-align: center;
+        font-size: 40px;
+        background-color: #421ebc;
+        color: white;
+        text-shadow: 1px 1px #000000;
+        }
+
+        .tagline {
+        margin: 0;
+        padding: 20px;
+        padding-top: 0px;
+        text-align: center;
+        font-size: 12px;
+        background-color: #421ebc;
+        color: white;
+        font-style: italic;
+        font-weight: 400;
+        text-shadow: 1px 1px #000000;
+        }
+        
+        .sub-heading {
+        margin: auto;
+        padding: 10px;
+        font-size: 22px;
+        font-weight: 400;
+        }
+        
+        .content {
+        margin: 20px;
+        margin-top: 15%;
+        padding: 10px;
+        text-align: left;
+        color: #263238;
+        /* text-shadow: 1px 1px #dbdbdb; */
+        border-style: groove;
+        border-radius: 5px;        
+        }
+
+
+        html, body {
+            margin:0;
+            padding:0;
+            font-family: sans-serif;
+        }
+
+    </style>
+    <div>
+        <h1 class = 'heading'>Feedback Dialler</h1>
+        <h3 class = 'tagline'>Powered by BMH Data Analytics Team</h3>
+    </div>
+    <div class = 'content'>
+        <h2 class = 'sub-heading' id="patient">Patient name</h2>
+        <hr>
+        <h2 class = 'sub-heading' id="doctor">Description</h2>
+        <hr>
+        <h2 class = 'sub-heading' id="phone">Phone number</h2>
+    </div>
+    <div>
+        <a id="call" class="button" href="https://babymhospital.org"><i class="fas fa-phone"></i>  Click to call</a> 
+    </div>
+    <script type="text/javascript">
+        var params = location.href.split("?")[1];
+        var patient = params.split('&')[0].replace(/%20/g, " ");;
+        var feedback = params.split('&')[1].replace(/%20/g, " ");;
+        var phone = params.split('&')[2];
+        document.getElementById('call').href = "tel:"+phone;
+        document.getElementById('patient').innerHTML = '<i class="fas fa-user"></i> ' + patient;
+        document.getElementById('doctor').innerHTML = '<i class="far fa-comment-alt"></i> ' + feedback;
+        document.getElementById('phone').innerHTML = '<i class="fas fa-mobile-alt"></i>  ' + phone;
+    </script>
+</body>
+</html>
