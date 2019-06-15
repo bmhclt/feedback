@@ -122,6 +122,9 @@
                     <div class="form-group d-none">  
                         <input type="text" class="form-control" id="mobile" name="mobile">                      
                     </div>
+                    <div class="form-group d-none">  
+                        <input type="text" class="form-control" id="admNo" name="admNo">                      
+                    </div>
                     <div class="form-group d-none">                      
                       <input type="text" class="form-control" id="ward" name="ward">                      
                     </div>
@@ -563,6 +566,7 @@
             var doctor = params.split('&')[5].replace(/%20/g, " ");
             var department = params.split('&')[6].replace(/%20/g, " ");
             var mobile = params.split('&')[7];
+            var admNo = params.split('&')[8];
         //Pre-fill form based on patient data
             document.getElementById('submitter').value = submitter;
             document.getElementById('name').value = name;
@@ -572,6 +576,7 @@
             document.getElementById('doctor').value = doctor;
             document.getElementById('department').value = department;
             document.getElementById('mobile').value = mobile;
+            document.getElementById('admNo').value = admNo;
 
         //Update sub-category based on category selected
         //Based on http://jsfiddle.net/Wa4ZF/9/ and https://stackoverflow.com/questions/20477406/filter-category-select-drop-down-based-on-another-drop-down-option
