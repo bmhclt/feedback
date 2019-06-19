@@ -84,12 +84,20 @@
         .bmh-blue-bg{
         background-color: #364cc9 !important;
         color: #ffffff !important;
-    }
+        }
 
-    .bmh-orange-bg{
-        background-color: #F35724 !important;
-        color: #ffffff !important;
-    }
+        .bmh-blue-txt{
+            color: #2c3da3 !important;
+        }
+
+        .bmh-orange-bg{
+            background-color: #F35724 !important;
+            color: #ffffff !important;
+        }
+
+        .bmh-orange-txt{
+            color: #F35724 !important;
+        }
 
         hr.hr-style { 
         border: 0; 
@@ -99,6 +107,25 @@
         background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
         background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
 }
+
+.rounded-heading {
+        border-radius: 5px 15px;
+        background: #007bff;
+        color: white;
+        padding: 10px; 
+        text-align: center;        
+
+    }
+    
+    .rounded-heading-v2 {
+        border-radius: 5px 15px;
+        background: #007bff;
+        color: white;
+        padding: 10px; 
+        text-align: center;
+        margin-top: 60px;
+
+    }
     </style>
     <link rel="stylesheet" href="bootstrap.min.css">
 </head>
@@ -120,11 +147,11 @@
                       <input type="text" class="form-control" id="submitter" name="submitter">                      
                     </div>
                     <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                      <label for="name">Name</label>
+                      <label for="name" class = 'bmh-blue-txt font-weight-bold'>Name</label>
                       <input type="text" class="form-control" id="name" name="name" readonly>                      
                     </div>
                     <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                      <label for="uhid">UHID</label>
+                      <label for="uhid" class = 'bmh-blue-txt font-weight-bold'>UHID</label>
                       <input type="text" class="form-control" id="uhid" name="uhid" readonly>                      
                     </div>
                     <div class="form-group d-none">  
@@ -163,14 +190,14 @@
                         
                     </div> 
                     <div class="form-group">
-                        <button class="btn bmh-orange-bg hide-me btn-block" type="button" data-toggle="collapse" data-target="#feedback1" aria-expanded="false" aria-controls="collapseExample">
+                        <button class="feedback-btn btn bmh-orange-bg hide-me btn-block" type="button" data-toggle="collapse" data-target="#feedback1" aria-expanded="false" aria-controls="collapseExample">
                                 Add Feedback
                         </button>
                     </div>
                     <div class = "collapse" id = 'feedback1'>
-                        <h4>Feedback 1</h4>
+                        <h4 class = 'bmh-orange-bg rounded-heading-v2'>Feedback 1</h4>
                         <div class="form-group">
-                            <label for="type1">Feedback Type</label>
+                            <label for="type1" class = 'bmh-orange-txt font-weight-bold'>Feedback Type</label>
                             <select class="form-control" id="type1" name="type1">
                             <option class = 'Select-type'>Select Feedback Type</option>
                             <option>Compliment</option>
@@ -179,7 +206,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="category1">Feedback Category</label>
+                            <label for="category1" class = 'bmh-orange-txt font-weight-bold'>Feedback Category</label>
                             <select class="form-control category1" id="category1" name="category1">
                             <option class = 'Select'>Select Category</option>
                             <option class = 'Cafeteria'>Cafeteria</option>
@@ -204,7 +231,7 @@
                             </select>
                         </div>  
                         <div class="form-group">
-                            <label for="sub-category1">Feedback Sub-category</label>
+                            <label for="sub-category1" class = 'bmh-orange-txt font-weight-bold'>Feedback Sub-category</label>
                             <select class="form-control sub-category1" id="sub-category1" name="subcategory1">
                             <option class = 'Select-sub'>Select Sub-category</option>
                             <option class = 'Operations'>Admission - Room allotment delay</option>
@@ -270,20 +297,20 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="comments">Comments</label>
+                            <label for="comments" class = 'bmh-orange-txt font-weight-bold'>Comments</label>
                             <textarea rows = "5" type="text" class="form-control" id="comments" name="description1"></textarea>                      
                         </div>   
                         <div class="form-group">
-                            <button class="btn bmh-orange-bg hide-me btn-block" type="button" data-toggle="collapse" data-target="#feedback2" aria-expanded="false" aria-controls="collapseExample">
+                            <button class="feedback-btn btn bmh-orange-bg hide-me btn-block" type="button" data-toggle="collapse" data-target="#feedback2" aria-expanded="false" aria-controls="collapseExample">
                                 Add Feedback
                             </button>
                         </div>
                     </div>                    
                     <div class = "collapse" id = 'feedback2'>
-                        <hr class="hr-style">
-                        <h4>Feedback 2</h4>
+                        <!-- <hr class="hr-style"> -->
+                        <h4 class = 'bmh-orange-bg rounded-heading'>Feedback 2</h4>
                         <div class="form-group">
-                            <label for="type2">Feedback Type</label>
+                            <label for="type2" class = 'bmh-orange-txt font-weight-bold'>Feedback Type</label>
                             <select class="form-control" id="type2" name="type2">
                             <option class = 'Select-type'>Select Feedback Type</option>
                             <option>Compliment</option>
@@ -292,7 +319,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="category2">Feedback Category</label>
+                            <label for="category2" class = 'bmh-orange-txt font-weight-bold'>Feedback Category</label>
                             <select class="form-control category2" id="category2" name="category2">
                             <option class = 'Select'>Select Category</option>
                             <option class = 'Cafeteria'>Cafeteria</option>
@@ -317,7 +344,7 @@
                             </select>
                         </div>  
                         <div class="form-group">
-                            <label for="sub-category2">Feedback Sub-category</label>
+                            <label for="sub-category2" class = 'bmh-orange-txt font-weight-bold'>Feedback Sub-category</label>
                             <select class="form-control sub-category2" id="sub-category2" name="subcategory2">
                             <option class = 'Select-sub'>Select Sub-category</option>
                             <option class = 'Operations'>Admission - Room allotment delay</option>
@@ -383,20 +410,20 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="comments">Comments</label>
+                            <label for="comments" class = 'bmh-orange-txt font-weight-bold'>Comments</label>
                             <textarea rows = "5" type="text" class="form-control" id="comments" name="description2"></textarea>                      
                         </div>  
                         <div class="form-group">
-                            <button class="btn bmh-orange-bg hide-me btn-block" type="button" data-toggle="collapse" data-target="#feedback3" aria-expanded="false" aria-controls="collapseExample">
+                            <button class="feedback-btn btn bmh-orange-bg hide-me btn-block" type="button" data-toggle="collapse" data-target="#feedback3" aria-expanded="false" aria-controls="collapseExample">
                                 Add Feedback
                             </button> 
                         </div>
                     </div>                    
                     <div class = "collapse" id = 'feedback3'>
-                        <hr class="hr-style">
-                        <h4>Feedback 3</h4>
+                        <!-- <hr class="hr-style"> -->
+                        <h4 class = 'bmh-orange-bg rounded-heading'>Feedback 3</h4>
                         <div class="form-group">
-                            <label for="type3">Feedback Type</label>
+                            <label for="type3" class = 'bmh-orange-txt font-weight-bold'>Feedback Type</label>
                             <select class="form-control" id="type3" name="type3">
                             <option class = 'Select-type'>Select Feedback Type</option>
                             <option>Compliment</option>
@@ -405,7 +432,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="category3">Feedback Category</label>
+                            <label for="category3" class = 'bmh-orange-txt font-weight-bold'>Feedback Category</label>
                             <select class="form-control category3" id="category3" name="category3">
                             <option class = 'Select'>Select Category</option>
                             <option class = 'Cafeteria'>Cafeteria</option>
@@ -430,7 +457,7 @@
                             </select>
                         </div>  
                         <div class="form-group">
-                            <label for="sub-category3">Feedback Sub-category</label>
+                            <label for="sub-category3" class = 'bmh-orange-txt font-weight-bold'>Feedback Sub-category</label>
                             <select class="form-control sub-category3" id="sub-category3" name="subcategory3">
                             <option class = 'Select-sub'>Select Sub-category</option>
                             <option class = 'Operations'>Admission - Room allotment delay</option>
@@ -496,7 +523,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="comments">Comments</label>
+                            <label for="comments" class = 'bmh-orange-txt font-weight-bold'>Comments</label>
                             <textarea rows = "5" type="text" class="form-control" id="comments" name="description3"></textarea>
                         </div>   
                     </div>
@@ -633,6 +660,12 @@
         $(document).ready(function(){
             $("#display1").click(function(){
                 $("#feedback1").fadeToggle();
+            });
+        });
+
+        $(document).ready(function(){
+            $(".feedback-btn").click(function(){
+                $('html, body').animate({scrollTop:$(document).height()}, 'slow');
             });
         });
 
