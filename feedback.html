@@ -180,7 +180,7 @@
                         <label class="nps-btn orange poor"><input type="radio" name="rating" value = "3"><span>3</span></label>
                         <label class="nps-btn orange poor"><input type="radio" name="rating" value = "4"><span>4</span></label>
                         <label class="nps-btn yellow poor"><input type="radio" name="rating" value = "5"><span>5</span></label>
-                        <label class="nps-btn yellow good"><input type="radio" name="rating" value = "6"><span>6</span></label>
+                        <label class="nps-btn yellow poor"><input type="radio" name="rating" value = "6"><span>6</span></label>
                         <label class="nps-btn green1 good"><input type="radio" name="rating" value = "7"><span>7</span></label>
                         <label class="nps-btn green1 good"><input type="radio" name="rating" value = "8"><span>8</span></label>
                         <label class="nps-btn green2 excellent"><input type="radio" name="rating" value = "9"><span>9</span></label>
@@ -190,7 +190,7 @@
                         
                     </div> 
                     <div class="form-group">
-                        <button class="feedback-btn btn bmh-orange-bg hide-me btn-block" type="button" data-toggle="collapse" data-target="#feedback1" aria-expanded="false" aria-controls="collapseExample">
+                        <button id = 'feedback-btn-1' class="feedback-btn btn bmh-orange-bg hide-me btn-block" type="button" data-toggle="collapse" data-target="#feedback1" aria-expanded="false" aria-controls="collapseExample">
                                 Add Feedback
                         </button>
                     </div>
@@ -297,8 +297,8 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="comments" class = 'bmh-orange-txt font-weight-bold'>Comments</label>
-                            <textarea rows = "5" type="text" class="form-control" id="comments" name="description1"></textarea>                      
+                            <label for="comments1" class = 'bmh-orange-txt font-weight-bold'>Comments</label>
+                            <textarea rows = "5" type="text" class="form-control" id="comments1" name="description1"></textarea>                      
                         </div>   
                         <div class="form-group">
                             <button class="feedback-btn btn bmh-orange-bg hide-me btn-block" type="button" data-toggle="collapse" data-target="#feedback2" aria-expanded="false" aria-controls="collapseExample">
@@ -540,13 +540,28 @@
                     <div id = 'modal-text' class="modal-body">
                     ...
                     </div>
-                    <div class="modal-footer">
+                    <div  class="modal-footer justify-content-center">
                         <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn bmh-blue-bg btn-block" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Sorry for poor feedback modal -->
+        <div class="modal fade" id="poor-feedback" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">                        
+                        <div id = 'modal-text-poor-feedback' class="modal-body">
+                        ...
+                        </div>
+                        <div class="modal-footer justify-content-center">
+                            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                            <button type="button" class="btn bmh-blue-bg btn-block " data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
     </div>
  
@@ -687,11 +702,19 @@
 
         $(document).ready(function(){
             $(".poor").click(function(){
-                $("#notification").html("<p class='text-justify'><em>We are sorry to hear that you are unsatisfied with your experience at BMH. \
-                Please let us know how we can improve by clicking on the <strong>'Add Feedback'</strong> button below.<em></p>");
-                $("#notification").fadeIn();
+                var message_poor = '<em>We are sorry to hear that you are unsatisfied with your experience at BMH. \
+                Please let us know how we can improve by providing your valuable feedback.<em></p>'
+                // $("#notification").fadeIn();                
+                $("#comments1").prop('required',true);
+                $("#feedback-btn-1").click();
+                //$('#modal-heading').html(heading);
+                $('#modal-text-poor-feedback').html(message_poor);                
+                $('#poor-feedback').modal('show');
+                
             });
         });
+
+
         </script>
 </body>
  
