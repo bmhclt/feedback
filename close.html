@@ -143,13 +143,15 @@
 </head>
  
 <body>    
-    <div class = 'container'>
-            <div class="jumbotron jumbotron-fluid bmh-blue-bg">
+    
+        <div class="jumbotron jumbotron-fluid bmh-blue-bg">
                     <div class="container text-center">
-                      <h1 class="display-5 text-white">BMH IP Feedback</h1>
+                        <img src="logo.jpg" class="img-fluid rounded" alt="Responsive image">
+                        <h1 class="display-5 text-white pt-3">IP Feedback Analysis</h1>
                       <p class="text-white"><em>Powered by BMH Data Analytics Team</em></p>
                     </div>
-            </div>
+        </div>
+        <div class = 'container'>
             <!-- <h2>Close Feedback</h2> -->
             <div class ='row'>
                 <div class="col-6">
@@ -217,7 +219,7 @@
                 <button class="btn bmh-orange-bg hide-me btn-block" id = 'reassign-button' type="button">
                         Re-assign Feedback
                 </button> 
-                <button class="btn bmh-orange-bg hide-me btn-block" id = 'close-button' type="button">
+                <button class="btn bmh-blue-bg hide-me btn-block" id = 'close-button' type="button">
                         Close Feedback
                 </button> 
             </div>
@@ -333,9 +335,9 @@
                     <input type="hidden" name="form_name" value="close">
                     <input type="hidden" name="feedbackID" class="feedbackID" value=" ">
                     <div class = "collapse" id = 'close-form'>
-                        <h4 class = 'bmh-orange-bg rounded-heading'>Close Feedback</h4>
+                        <h4 class = 'bmh-blue-bg rounded-heading'>Close Feedback</h4>
                         <div class="form-group">
-                            <label for="category1" class = 'bmh-orange-txt font-weight-bold'>Status</label>
+                            <label for="category1" class = 'bmh-blue-txt font-weight-bold'>Status</label>
                             <select class="form-control clStatus " id="clStatus" name="clStatus">
                             <option class = ' '>Select Status</option>
                             <option class = ' '>In-progress</option>
@@ -345,10 +347,10 @@
                         </div>  
                         
                         <div class="form-group">
-                            <label for="comments" class = 'bmh-orange-txt font-weight-bold'>Closure Comments</label>
+                            <label for="comments" class = 'bmh-blue-txt font-weight-bold'>Closure Comments</label>
                             <textarea rows = "5" type="text" class="form-control" id="comments" name="description1"></textarea>                      
                         </div>   
-                        <button type="submit" class="btn bmh-orange-bg btn-block">Submit</button>
+                        <button type="submit" class="btn bmh-blue-bg btn-block">Submit</button>
                     </div>                     
             </form>
 
