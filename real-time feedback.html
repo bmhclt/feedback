@@ -1,0 +1,312 @@
+<html>
+ 
+<head>
+    <title>IP Feedback Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#364cc9">
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="jquery-migrate-1.4.1.min.js"></script>    
+    <script src="bootstrap.min.js"></script>
+    <style>
+        #nps label {
+            float:left;
+            width:10%;            
+            /* margin:4px; */
+            /* background-color:#EFEFEF; */
+            /* border-radius:4px; */
+            border:1px solid #78909c;
+            overflow:auto;
+            /* font-size: 0 !important; */
+            /* margin: 0 !important; */
+            /* padding: 0 !important;
+            margin: auto; */
+            margin-bottom:20px;
+            color:#F7F7F7;
+            font-weight: 550;
+            text-shadow: white 1px 1px 2px;
+            
+        }
+
+        .red {
+            background-color:#ffbcaf;
+        }
+
+        .orange {
+            background-color:#ffd180;
+        }
+
+        .yellow {
+            background-color:#ffff8d;
+        }
+      
+        .green1 {
+            background-color:#cfff95;
+        }
+
+        .green2 {
+            background-color:#98ee99;
+        }
+
+
+
+        #nps label span {
+            text-align:center;
+            font-size: 20px;
+            padding:5x;
+            display:block;
+        }
+
+        #nps label input {
+            position:absolute;
+            top:-20px;
+            /* visibility: hidden; */
+            display:none;
+        }
+
+        #nps input:checked + span {
+            background-color:#288cff;
+            color:#F7F7F7;
+            text-shadow: blue 1px 1px 2px;
+        }
+
+
+        #nps .nps-btn {
+            color:#333;
+        }
+
+        .hide-me[aria-expanded="true"] {display: none;}
+
+        /* .add-feedback {
+            background-color:#0277bd !important;
+            color:#F7F7F7 !important;
+
+        } */
+
+        .bmh-blue-bg{
+        background-color: #364cc9 !important;
+        color: #ffffff !important;
+        }
+
+        .bmh-blue-txt{
+            color: #2c3da3 !important;
+        }
+
+        .bmh-orange-bg{
+            background-color: #F35724 !important;
+            color: #ffffff !important;
+        }
+
+        .bmh-orange-txt{
+            color: #F35724 !important;
+        }
+
+        hr.hr-style { 
+        border: 0; 
+        height: 1px; 
+        background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+        background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+        background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+        background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
+}
+
+    .rounded-heading {
+        border-radius: 5px 15px;
+        background: #007bff;
+        color: white;
+        padding: 10px; 
+        text-align: center;        
+
+    }
+    
+    .rounded-heading-v2 {
+        border-radius: 5px 15px;
+        background: #007bff;
+        color: white;
+        padding: 10px; 
+        text-align: center;
+        margin-top: 60px;
+
+    }
+
+    .jumbotron {
+    padding-bottom: 0.25rem !important;
+    padding-top: 0.75rem !important;
+    margin-bottom: 1rem !important;
+    }
+
+    @media (min-width: 576px) {
+        .jumbotron {
+            padding-bottom: 1rem !important;
+        padding-top: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
+        }
+    }
+
+    @media (min-width: 576px) {
+        .logo {
+        width: 200px !important;
+        }
+    }
+
+    .hidden{
+  display: none;
+}
+
+    </style>
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+ 
+<body>    
+        <div class="jumbotron jumbotron-fluid bmh-blue-bg">
+                <div class="container text-center">
+                  <img src="logo 200.png" class="img-fluid rounded logo" alt="Responsive image" width = '150px'>
+                  <h1 class="display-5 text-white pt-2">Feedback Form</h1>
+                  <p class="text-white"><em>Powered by BMH Data Analytics Team</em></p>
+                </div>
+        </div>
+        <div class = 'container'>
+            <p class='text-justify bmh-blue-txt font-weight-bold'>Please let us know how we can provide you a delightful experience:</p>
+            <form name="myForm">
+                <input type="hidden" id="form_name" name="form_name" value="feedback">
+                <div class="row">
+                    <div class="form-group d-none">
+                      <input type="text" class="form-control" id="submitter" name="submitter">                      
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                      <label for="name" class = 'bmh-blue-txt font-weight-bold'>Name</label>
+                      <input type="text" class="form-control" id="name" name="name" required>                      
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                      <label for="uhid" class = 'bmh-blue-txt font-weight-bold'>Mobile Number</label>
+                      <input type="tel" class="form-control" id="mobile" name="mobile" maxlength="10"  pattern="[0-9]{10}" required>                      
+                    </div>
+                    <!-- <div id="mobile">
+                        <div class="input">
+                          <div class="label">
+                            <div class="label-1">
+                              <span id="mobile-valid" class="hidden mob">
+                                  <i class="fa fa-check pwd-valid"></i>Valid Mobile No
+                              </span>  
+                              <span id="folio-invalid" class="hidden mob-helpers">
+                                  <i class="fa fa-times mobile-invalid"></i>Invalid mobile No
+                              </span>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-xs-3">
+                              <div class="label-2">
+                                Mobile No
+                              </div>
+                            </div>
+                            <div class="col-xs-9">
+                              <input id="mobile" type="text" class="form-control form-change-element" />
+                            </div>
+                          </div>
+                        </div>
+                      </div> -->
+                    <div class="form-group col-12">
+                        <label for="uhid" class = 'bmh-blue-txt font-weight-bold'>Comments</label>
+                        <textarea class="form-control" id="comments" name="comments" rows="5" required></textarea>                      
+                      </div>
+                </div>                    
+
+ 
+                    <button type="submit" class="btn bmh-orange-bg btn-block">Submit</button>
+            </form>
+
+        <!-- Submission confirmation modal -->
+        <div class="modal fade" id="submission" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 id = 'modal-heading' class="modal-title" id="exampleModalLongTitle">...</h5>
+                    </div>
+                    <div id = 'modal-text' class="modal-body">
+                    ...
+                    </div>
+                    <div  class="modal-footer justify-content-center">
+                        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                        <button type="button" class="btn bmh-blue-bg btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+ 
+
+			
+
+		</div>
+    <script type="text/javascript">
+        const url = "https://script.google.com/macros/s/AKfycby1OCswqdFj4LQiU_zAUnxGXfppmdZnXvvHslxPvVWShk0inXI_/exec";        
+        const form = document.forms.namedItem("myForm");
+        console.log(form);
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            createMessage();
+        })
+ 
+        function createMessage() {
+            console.log("submitted");
+            const formData = new FormData(form);
+            console.log(formData);
+            fetch(url, {
+                method: "POST"
+                , body: formData
+            }).then(function (response) {
+                return response.json()
+            }).then(function (data) {
+                console.log(data);
+                let heading = "";
+                let message = "";
+                if (data.status === 200) {
+                    heading = "Feedback submitted successfully!";
+                    message = "Your feedback is extremely important to us. Our Patient Care Coordinator\
+                    will be contacting you soon.";
+                    form.reset();
+                }
+                else {
+                    heading = "Submission failed!";
+                    message = "Sorry, something went wrong.";
+                }                
+                $('#modal-heading').html(heading);
+                $('#modal-text').html(message);                
+                $('#submission').modal('show');
+            })
+        }
+
+        $(document).ready(function(){
+  
+        // $("#mobile").on("blur", function(){
+        //     var mobNum = $(this).val();
+        //     var filter = /^\d*(?:\.\d{1,2})?$/;
+
+        //     if (filter.test(mobNum)) {
+        //         if(mobNum.length==10){
+        //             alert("valid");
+        //         $("#mobile-valid").removeClass("hidden");
+        //         $("#folio-invalid").addClass("hidden");
+        //         } else {
+        //             alert('Please put 10  digit mobile number');
+        //         $("#folio-invalid").removeClass("hidden");
+        //         $("#mobile-valid").addClass("hidden");
+        //             return false;
+        //         }
+        //         }
+        //         else {
+        //         alert('Not a valid number');
+        //         $("#folio-invalid").removeClass("hidden");
+        //         $("#mobile-valid").addClass("hidden");
+        //         return false;
+        //     }
+    
+        // });
+  
+});
+
+
+        </script>
+</body>
+ 
+</html>
