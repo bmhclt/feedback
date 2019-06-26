@@ -633,8 +633,8 @@
         }
 
         //Get patient details from URL parameters
-            var params = location.href.split("?")[1];
-            var submitter = params.split('&')[0].replace(/%20/g, " ");;
+            var params = location.href.replace(/%20&%20/g, " AND ").split("?")[1];
+            var submitter = params.split('&')[0].replace(/%20/g, " ");
             var name = params.split('&')[1].replace(/%20/g, " ");
             var uhid = params.split('&')[2];
             var ward = params.split('&')[3];
@@ -663,9 +663,6 @@
             "%0a"+submitter+
             ",%0a"+"Customer Relations Executive"+
             ",%0a"+"Baby Memorial Hospital.";
-            document.getElementById('patient').innerHTML = '<i class="fas fa-user"></i> ' + patient;
-            document.getElementById('doctor').innerHTML = '<i class="far fa-comment-alt"></i> ' + feedback;
-            document.getElementById('phone').innerHTML = '<i class="fas fa-mobile-alt"></i>  ' + phone;
 
             console.log(admNo);
 
