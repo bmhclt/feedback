@@ -1,0 +1,746 @@
+<html>
+ 
+<head>
+    <title>IP Feedback Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#364cc9">
+    <link rel="stylesheet" href="css/all.min.css">  
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="jquery-migrate-1.4.1.min.js"></script>    
+    <script src="bootstrap.min.js"></script>
+    <style>
+        #nps label {
+            float:left;
+            width:10%;            
+            /* margin:4px; */
+            /* background-color:#EFEFEF; */
+            /* border-radius:4px; */
+            border:1px solid #78909c;
+            overflow:auto;
+            /* font-size: 0 !important; */
+            /* margin: 0 !important; */
+            /* padding: 0 !important;
+            margin: auto; */
+            margin-bottom:20px;
+            color:#F7F7F7;
+            font-weight: 550;
+            text-shadow: white 1px 1px 2px;
+            
+        }
+
+        .red {
+            background-color:#ffbcaf;
+        }
+
+        .orange {
+            background-color:#ffd180;
+        }
+
+        .yellow {
+            background-color:#ffff8d;
+        }
+      
+        .green1 {
+            background-color:#cfff95;
+        }
+
+        .green2 {
+            background-color:#98ee99;
+        }
+
+
+
+        #nps label span {
+            text-align:center;
+            font-size: 20px;
+            padding:5x;
+            display:block;
+        }
+
+        #nps label input {
+            position:absolute;
+            top:-20px;
+            /* visibility: hidden; */
+            display:none;
+        }
+
+        #nps input:checked + span {
+            background-color:#288cff;
+            color:#F7F7F7;
+            text-shadow: blue 1px 1px 2px;
+        }
+
+
+        #nps .nps-btn {
+            color:#333;
+        }
+
+        .hide-me[aria-expanded="true"] {display: none;}
+
+        /* .add-feedback {
+            background-color:#0277bd !important;
+            color:#F7F7F7 !important;
+
+        } */
+
+        .bmh-blue-bg{
+        background-color: #364cc9 !important;
+        color: #ffffff !important;
+        }
+
+        .bmh-blue-txt{
+            color: #2c3da3 !important;
+        }
+
+        .bmh-orange-bg{
+            background-color: #F35724 !important;
+            color: #ffffff !important;
+        }
+
+        .bmh-orange-txt{
+            color: #F35724 !important;
+        }
+
+        hr.hr-style { 
+        border: 0; 
+        height: 1px; 
+        background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+        background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+        background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+        background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
+}
+
+    .rounded-heading {
+        border-radius: 5px 15px;
+        background: #007bff;
+        color: white;
+        padding: 10px; 
+        text-align: center;        
+
+    }
+    
+    .rounded-heading-v2 {
+        border-radius: 5px 15px;
+        background: #007bff;
+        color: white;
+        padding: 10px; 
+        text-align: center;
+        margin-top: 60px;
+
+    }
+
+    .jumbotron {
+    padding-bottom: 0.25rem !important;
+    padding-top: 0.75rem !important;
+    margin-bottom: 1rem !important;
+    }
+
+    @media (min-width: 576px) {
+        .jumbotron {
+            padding-bottom: 1rem !important;
+        padding-top: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
+        }
+    }
+
+    @media (min-width: 576px) {
+        .logo {
+        width: 200px !important;
+        }
+    }
+
+    .float{
+        position:absolute;
+        width:40px;
+        height:36px;
+        top:10px;
+        right:10px;
+        background-color:#364cc9;
+        color:#FFF;
+        border-radius:5px;
+        text-align:center;
+        /* box-shadow: 2px 2px 3px #FFF; */
+        box-shadow: 0 0 5px 2px rgba(179, 172, 236, 0.35);
+    }
+
+    .my-float{
+        margin-top:5px;
+        font-size: 26px;
+        
+    }
+
+    
+
+    </style>
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+ 
+<body>    
+        <div class="jumbotron jumbotron-fluid bmh-blue-bg">
+                <!-- <a id ="sms" href="#" class="float">
+                        <i class="fas fa-envelope my-float"></i>
+                    </a> -->
+                <div class="container text-center">
+                  <img src="logo 200.png" class="img-fluid rounded logo" alt="Responsive image" width = '150px'>
+                  <h1 class="display-5 text-white pt-2">IP Feedback Form</h1>
+                  <p class="text-white"><em>Powered by BMH Data Analytics Team</em></p>
+                </div>
+        </div>
+        <div class = 'container'>
+            
+            <form name="myForm">
+                <input type="hidden" id="form_name" name="form_name" value="feedback">
+                <div class="row">
+
+                    <div class="form-group col-12">
+                            <label for="submitter" class = 'bmh-blue-txt font-weight-bold'>Submitted by?</label>
+                            <select class="form-control" id="submitter" name="submitter">
+                            <option class = 'Select'>Select</option>
+                            <option>AJITH KUMAR M. K.</option>
+                            <option>DIVYA T.</option>
+                            <option>MUMTHAZ E. C.</option>
+                            <option>PRASEETHA K.</option>
+                            <option>PRAVITHA M.</option>
+                            <option>RAJI K. P.</option>
+                            <option>REMA K. P.</option>
+                            <option>SABI K. P.</option>
+                            <option>SHAIBA K.</option>
+                            <option>SINDHU P.</option>
+                            <option>SINDHU T.</option>
+                            </select>
+                        </div>
+                    <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <label for="name" class = 'bmh-blue-txt font-weight-bold'>Name</label>
+                        <input type="text" class="form-control" id="name" name="name">                      
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <label for="uhid" class = 'bmh-blue-txt font-weight-bold'>UHID</label>
+                        <input type="text" class="form-control" id="uhid" name="uhid">                      
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">  
+                        <label for="admNo" class = 'bmh-blue-txt font-weight-bold'>Admission Number</label>
+                        <input type="text" class="form-control" id="admNo" name="admNo">                      
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">  
+                        <label for="mobile" class = 'bmh-blue-txt font-weight-bold'>Mobile</label>
+                        <input type="text" class="form-control" id="mobile" name="mobile">                      
+                    </div>                    
+                    <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">      
+                        <label for="ward" class = 'bmh-blue-txt font-weight-bold'>Ward</label>                
+                        <input type="text" class="form-control" id="ward" name="ward">                      
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">  
+                        <label for="room" class = 'bmh-blue-txt font-weight-bold'>Room</label>
+                        <input type="text" class="form-control" id="room" name="room">                      
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">  
+                        <label for="doctor" class = 'bmh-blue-txt font-weight-bold'>Doctor</label>
+                        <input type="text" class="form-control" id="doctor" name="doctor">                      
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">  
+                        <label for="department" class = 'bmh-blue-txt font-weight-bold'>Department</label>
+                        <input type="text" class="form-control" id="department" name="department">                      
+                    </div>                    
+                </div>                    
+                    <div class="form-group" id = "nps">
+                        <p class='text-justify bmh-blue-txt font-weight-bold'>Based on your recent experience at BMH, how likely are you to recommend us to a relative or a friend?</p>
+                        <label class="nps-btn red poor"><input type="radio" name="rating" value = "1"><span>1</span></label>
+                        <label class="nps-btn red poor"><input type="radio" name="rating" value = "2"><span>2</span></label>
+                        <label class="nps-btn orange poor"><input type="radio" name="rating" value = "3"><span>3</span></label>
+                        <label class="nps-btn orange poor"><input type="radio" name="rating" value = "4"><span>4</span></label>
+                        <label class="nps-btn yellow poor"><input type="radio" name="rating" value = "5"><span>5</span></label>
+                        <label class="nps-btn yellow poor"><input type="radio" name="rating" value = "6"><span>6</span></label>
+                        <label class="nps-btn green1 good"><input type="radio" name="rating" value = "7"><span>7</span></label>
+                        <label class="nps-btn green1 good"><input type="radio" name="rating" value = "8"><span>8</span></label>
+                        <label class="nps-btn green2 excellent"><input type="radio" name="rating" value = "9"><span>9</span></label>
+                        <label class="nps-btn green2 excellent"><input type="radio" name="rating" value = "10"><span>10</span></label>
+                    </div>
+                    <div class="form-group collapse" id = "notification">
+                        
+                    </div> 
+                    <div class="form-group">
+                        <button id = 'feedback-btn-1' class="feedback-btn btn bmh-orange-bg hide-me btn-block" type="button" data-toggle="collapse" data-target="#feedback1" aria-expanded="false" aria-controls="collapseExample">
+                                Add Feedback
+                        </button>
+                    </div>
+                    <div class = "collapse" id = 'feedback1'>
+                        <h4 class = 'bmh-orange-bg rounded-heading-v2'>Feedback 1</h4>
+                        <div class="form-group">
+                            <label for="type1" class = 'bmh-orange-txt font-weight-bold'>Feedback Type</label>
+                            <select class="form-control" id="type1" name="type1">
+                            <option class = 'Select-type'>Select Feedback Type</option>
+                            <option>Compliment</option>
+                            <option>Complaint</option>
+                            <option>Suggestion</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="category1" class = 'bmh-orange-txt font-weight-bold'>Feedback Category</label>
+                            <select class="form-control category1" id="category1" name="category1">
+                            <option class = 'Select'>Select Category</option>
+                            <option class = 'Admission'>Admission</option>
+                            <option class = 'Attendant'>Attendant services</option>
+                            <option class = 'Building'>Building and facilities</option>
+                            <option class = 'Cafeteria'>Cafeteria</option>
+                            <option class = 'Canteen'>Canteen</option>
+                            <option class = 'Care_coordination'>Care coordination</option>
+                            <option class = 'Dietary'>Dietary</option>
+                            <option class = 'Discharge'>Discharge</option>
+                            <option class = 'Doctors'>Doctors</option>
+                            <option class = 'ED'>ED</option>
+                            <option class = 'Housekeeping'>Housekeeping</option>
+                            <option class = 'Insurance'>Insurance desk</option>
+                            <option class = 'Lab'>Lab</option>
+                            <option class = 'Nursing'>Nursing</option>
+                            <option class = 'Paramedical'>Paramedical services</option>
+                            <option class = 'Pharmacy'>Pharmacy</option>
+                            <option class = 'Radiology'>Radiology</option>
+                            <option class = 'Security'>Security</option>
+                            <option class = 'Others'>Others</option>
+                            </select>
+                        </div>  
+                        <div class="form-group">
+                            <label for="sub-category1" class = 'bmh-orange-txt font-weight-bold'>Feedback Sub-category</label>
+                            <select class="form-control sub-category1" id="sub-category1" name="subcategory1">
+                            <option class = 'Select-sub'>Select Sub-category</option>
+                            <option class = 'Admission'>Delay in room allotment</option>
+                            <option class = 'Admission'>Staff behaviour</option>
+                            <option class = 'Attendant'>Staff behaviour</option>
+                            <option class = 'Attendant'>Timely services</option>
+                            <option class = 'Building'>Furniture and fixtures</option>
+                            <option class = 'Building'>Lift services</option>
+                            <option class = 'Building'>Parking</option>                            
+                            <option class = 'Building'>Signage</option>
+                            <option class = 'Building'>Ventilation and lighting</option>
+                            <option class = 'Cafeteria'>Ambience</option>
+                            <option class = 'Cafeteria'>Quality and cost</option>
+                            <option class = 'Cafeteria'>Staff behaviour</option>  
+                            <option class = 'Canteen'>Ambience</option>
+                            <option class = 'Canteen'>Quality and cost</option>
+                            <option class = 'Canteen'>Staff behaviour</option>
+                            <option class = 'Canteen'>Waiting time</option>
+                            <option class = 'Care_coordination'>IP CRE</option>
+                            <option class = 'Care_coordination'>Supervisors</option>
+                            <option class = 'Care_coordination'>Ward secretary</option>
+                            <option class = 'Dietary'>Quality and cost</option>
+                            <option class = 'Dietary'>Staff behaviour</option>
+                            <option class = 'Dietary'>Waiting time</option>
+                            <option class = 'Discharge'>Bill</option>
+                            <option class = 'Discharge'>Delay in discharge</option>
+                            <option class = 'Discharge'>Staff behaviour</option>
+                            <option class = 'Doctors'>Care and concern</option>
+                            <option class = 'Doctors'>Communication</option>
+                            <option class = 'ED'>Care and concern</option>
+                            <option class = 'ED'>Communication</option>
+                            <option class = 'ED'>Delay in services</option>
+                            <option class = 'Housekeeping'>Room cleanliness</option>
+                            <option class = 'Housekeeping'>Staff behaviour</option>
+                            <option class = 'Housekeeping'>Timely services</option>
+                            <option class = 'Housekeeping'>Toilet cleanliness</option>
+                            <option class = 'Insurance'>Delay in services</option>
+                            <option class = 'Insurance'>Staff behaviour</option>
+                            <option class = 'Lab'>Delay in reporting</option>
+                            <option class = 'Nursing'>Appearance and grooming</option>
+                            <option class = 'Nursing'>Care and concern</option>
+                            <option class = 'Nursing'>Timely services</option>
+                            <option class = 'Paramedical'>Nutrition and dietetics</option>
+                            <option class = 'Paramedical'>Physiotherapy</option>
+                            <option class = 'Paramedical'>Speech therapy and audiology</option>
+                            <option class = 'Pharmacy'>Delay in services</option>
+                            <option class = 'Pharmacy'>Medicine availability</option>
+                            <option class = 'Pharmacy'>Staff behaviour</option>
+                            <option class = 'Radiology'>Delay in reporting</option>
+                            <option class = 'Radiology'>Investigation delay</option>
+                            <option class = 'Radiology'>Staff behaviour</option>
+                            <option class = 'Security'>Staff behaviour</option>
+                            <option class = 'Others'>General</option>
+                            <option class = 'Others'>Hospital Management</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="comments1" class = 'bmh-orange-txt font-weight-bold'>Comments</label>
+                            <textarea rows = "5" type="text" class="form-control" id="comments1" name="description1"></textarea>                      
+                        </div>   
+                        <div class="form-group">
+                            <button class="feedback-btn btn bmh-orange-bg hide-me btn-block" type="button" data-toggle="collapse" data-target="#feedback2" aria-expanded="false" aria-controls="collapseExample">
+                                Add Feedback
+                            </button>
+                        </div>
+                    </div>                    
+                    <div class = "collapse" id = 'feedback2'>
+                        <!-- <hr class="hr-style"> -->
+                        <h4 class = 'bmh-orange-bg rounded-heading'>Feedback 2</h4>
+                        <div class="form-group">
+                            <label for="type2" class = 'bmh-orange-txt font-weight-bold'>Feedback Type</label>
+                            <select class="form-control" id="type2" name="type2">
+                            <option class = 'Select-type'>Select Feedback Type</option>
+                            <option>Compliment</option>
+                            <option>Complaint</option>
+                            <option>Suggestion</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="category2" class = 'bmh-orange-txt font-weight-bold'>Feedback Category</label>
+                            <select class="form-control category2" id="category2" name="category2">
+                                    <option class = 'Select'>Select Category</option>
+                                    <option class = 'Admission'>Admission</option>
+                                    <option class = 'Attendant'>Attendant services</option>
+                                    <option class = 'Building'>Building and facilities</option>
+                                    <option class = 'Cafeteria'>Cafeteria</option>
+                                    <option class = 'Canteen'>Canteen</option>
+                                    <option class = 'Care_coordination'>Care coordination</option>
+                                    <option class = 'Dietary'>Dietary</option>
+                                    <option class = 'Discharge'>Discharge</option>
+                                    <option class = 'Doctors'>Doctors</option>
+                                    <option class = 'ED'>ED</option>
+                                    <option class = 'Housekeeping'>Housekeeping</option>
+                                    <option class = 'Insurance'>Insurance desk</option>
+                                    <option class = 'Lab'>Lab</option>
+                                    <option class = 'Nursing'>Nursing</option>
+                                    <option class = 'Paramedical'>Paramedical services</option>
+                                    <option class = 'Pharmacy'>Pharmacy</option>
+                                    <option class = 'Radiology'>Radiology</option>
+                                    <option class = 'Security'>Security</option>
+                                    <option class = 'Others'>Others</option>
+                            </select>
+                        </div>  
+                        <div class="form-group">
+                            <label for="sub-category2" class = 'bmh-orange-txt font-weight-bold'>Feedback Sub-category</label>
+                            <select class="form-control sub-category2" id="sub-category2" name="subcategory2">
+                                    <option class = 'Select-sub'>Select Sub-category</option>
+                                    <option class = 'Admission'>Delay in room allotment</option>
+                                    <option class = 'Admission'>Staff behaviour</option>
+                                    <option class = 'Attendant'>Staff behaviour</option>
+                                    <option class = 'Attendant'>Timely services</option>
+                                    <option class = 'Building'>Furniture and fixtures</option>
+                                    <option class = 'Building'>Lift services</option>
+                                    <option class = 'Building'>Parking</option>                            
+                                    <option class = 'Building'>Signage</option>
+                                    <option class = 'Building'>Ventilation and lighting</option>
+                                    <option class = 'Cafeteria'>Ambience</option>
+                                    <option class = 'Cafeteria'>Quality and cost</option>
+                                    <option class = 'Cafeteria'>Staff behaviour</option>  
+                                    <option class = 'Canteen'>Ambience</option>
+                                    <option class = 'Canteen'>Quality and cost</option>
+                                    <option class = 'Canteen'>Staff behaviour</option>
+                                    <option class = 'Canteen'>Waiting time</option>
+                                    <option class = 'Care_coordination'>IP CRE</option>
+                                    <option class = 'Care_coordination'>Supervisors</option>
+                                    <option class = 'Care_coordination'>Ward secretary</option>
+                                    <option class = 'Dietary'>Quality and cost</option>
+                                    <option class = 'Dietary'>Staff behaviour</option>
+                                    <option class = 'Dietary'>Waiting time</option>
+                                    <option class = 'Discharge'>Bill</option>
+                                    <option class = 'Discharge'>Delay in discharge</option>
+                                    <option class = 'Discharge'>Staff behaviour</option>
+                                    <option class = 'Doctors'>Care and concern</option>
+                                    <option class = 'Doctors'>Communication</option>
+                                    <option class = 'ED'>Care and concern</option>
+                                    <option class = 'ED'>Communication</option>
+                                    <option class = 'ED'>Delay in services</option>
+                                    <option class = 'Housekeeping'>Room cleanliness</option>
+                                    <option class = 'Housekeeping'>Staff behaviour</option>
+                                    <option class = 'Housekeeping'>Timely services</option>
+                                    <option class = 'Housekeeping'>Toilet cleanliness</option>
+                                    <option class = 'Insurance'>Delay in services</option>
+                                    <option class = 'Insurance'>Staff behaviour</option>
+                                    <option class = 'Lab'>Delay in reporting</option>
+                                    <option class = 'Nursing'>Appearance and grooming</option>
+                                    <option class = 'Nursing'>Care and concern</option>
+                                    <option class = 'Nursing'>Timely services</option>
+                                    <option class = 'Paramedical'>Nutrition and dietetics</option>
+                                    <option class = 'Paramedical'>Physiotherapy</option>
+                                    <option class = 'Paramedical'>Speech therapy and audiology</option>
+                                    <option class = 'Pharmacy'>Delay in services</option>
+                                    <option class = 'Pharmacy'>Medicine availability</option>
+                                    <option class = 'Pharmacy'>Staff behaviour</option>
+                                    <option class = 'Radiology'>Delay in reporting</option>
+                                    <option class = 'Radiology'>Investigation delay</option>
+                                    <option class = 'Radiology'>Staff behaviour</option>
+                                    <option class = 'Security'>Staff behaviour</option>
+                                    <option class = 'Others'>General</option>
+                                    <option class = 'Others'>Hospital Management</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="comments" class = 'bmh-orange-txt font-weight-bold'>Comments</label>
+                            <textarea rows = "5" type="text" class="form-control" id="comments" name="description2"></textarea>                      
+                        </div>  
+                        <div class="form-group">
+                            <button class="feedback-btn btn bmh-orange-bg hide-me btn-block" type="button" data-toggle="collapse" data-target="#feedback3" aria-expanded="false" aria-controls="collapseExample">
+                                Add Feedback
+                            </button> 
+                        </div>
+                    </div>                    
+                    <div class = "collapse" id = 'feedback3'>
+                        <!-- <hr class="hr-style"> -->
+                        <h4 class = 'bmh-orange-bg rounded-heading'>Feedback 3</h4>
+                        <div class="form-group">
+                            <label for="type3" class = 'bmh-orange-txt font-weight-bold'>Feedback Type</label>
+                            <select class="form-control" id="type3" name="type3">
+                            <option class = 'Select-type'>Select Feedback Type</option>
+                            <option>Compliment</option>
+                            <option>Complaint</option>
+                            <option>Suggestion</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="category3" class = 'bmh-orange-txt font-weight-bold'>Feedback Category</label>
+                            <select class="form-control category3" id="category3" name="category3">
+                                    <option class = 'Select'>Select Category</option>
+                                    <option class = 'Admission'>Admission</option>
+                                    <option class = 'Attendant'>Attendant services</option>
+                                    <option class = 'Building'>Building and facilities</option>
+                                    <option class = 'Cafeteria'>Cafeteria</option>
+                                    <option class = 'Canteen'>Canteen</option>
+                                    <option class = 'Care_coordination'>Care coordination</option>
+                                    <option class = 'Dietary'>Dietary</option>
+                                    <option class = 'Discharge'>Discharge</option>
+                                    <option class = 'Doctors'>Doctors</option>
+                                    <option class = 'ED'>ED</option>
+                                    <option class = 'Housekeeping'>Housekeeping</option>
+                                    <option class = 'Insurance'>Insurance desk</option>
+                                    <option class = 'Lab'>Lab</option>
+                                    <option class = 'Nursing'>Nursing</option>
+                                    <option class = 'Paramedical'>Paramedical services</option>
+                                    <option class = 'Pharmacy'>Pharmacy</option>
+                                    <option class = 'Radiology'>Radiology</option>
+                                    <option class = 'Security'>Security</option>
+                                    <option class = 'Others'>Others</option>
+                            </select>
+                        </div>  
+                        <div class="form-group">
+                            <label for="sub-category3" class = 'bmh-orange-txt font-weight-bold'>Feedback Sub-category</label>
+                            <select class="form-control sub-category3" id="sub-category3" name="subcategory3">
+                                    <option class = 'Select-sub'>Select Sub-category</option>
+                                    <option class = 'Admission'>Delay in room allotment</option>
+                                    <option class = 'Admission'>Staff behaviour</option>
+                                    <option class = 'Attendant'>Staff behaviour</option>
+                                    <option class = 'Attendant'>Timely services</option>
+                                    <option class = 'Building'>Furniture and fixtures</option>
+                                    <option class = 'Building'>Lift services</option>
+                                    <option class = 'Building'>Parking</option>                            
+                                    <option class = 'Building'>Signage</option>
+                                    <option class = 'Building'>Ventilation and lighting</option>
+                                    <option class = 'Cafeteria'>Ambience</option>
+                                    <option class = 'Cafeteria'>Quality and cost</option>
+                                    <option class = 'Cafeteria'>Staff behaviour</option>  
+                                    <option class = 'Canteen'>Ambience</option>
+                                    <option class = 'Canteen'>Quality and cost</option>
+                                    <option class = 'Canteen'>Staff behaviour</option>
+                                    <option class = 'Canteen'>Waiting time</option>
+                                    <option class = 'Care_coordination'>IP CRE</option>
+                                    <option class = 'Care_coordination'>Supervisors</option>
+                                    <option class = 'Care_coordination'>Ward secretary</option>
+                                    <option class = 'Dietary'>Quality and cost</option>
+                                    <option class = 'Dietary'>Staff behaviour</option>
+                                    <option class = 'Dietary'>Waiting time</option>
+                                    <option class = 'Discharge'>Bill</option>
+                                    <option class = 'Discharge'>Delay in discharge</option>
+                                    <option class = 'Discharge'>Staff behaviour</option>
+                                    <option class = 'Doctors'>Care and concern</option>
+                                    <option class = 'Doctors'>Communication</option>
+                                    <option class = 'ED'>Care and concern</option>
+                                    <option class = 'ED'>Communication</option>
+                                    <option class = 'ED'>Delay in services</option>
+                                    <option class = 'Housekeeping'>Room cleanliness</option>
+                                    <option class = 'Housekeeping'>Staff behaviour</option>
+                                    <option class = 'Housekeeping'>Timely services</option>
+                                    <option class = 'Housekeeping'>Toilet cleanliness</option>
+                                    <option class = 'Insurance'>Delay in services</option>
+                                    <option class = 'Insurance'>Staff behaviour</option>
+                                    <option class = 'Lab'>Delay in reporting</option>
+                                    <option class = 'Nursing'>Appearance and grooming</option>
+                                    <option class = 'Nursing'>Care and concern</option>
+                                    <option class = 'Nursing'>Timely services</option>
+                                    <option class = 'Paramedical'>Nutrition and dietetics</option>
+                                    <option class = 'Paramedical'>Physiotherapy</option>
+                                    <option class = 'Paramedical'>Speech therapy and audiology</option>
+                                    <option class = 'Pharmacy'>Delay in services</option>
+                                    <option class = 'Pharmacy'>Medicine availability</option>
+                                    <option class = 'Pharmacy'>Staff behaviour</option>
+                                    <option class = 'Radiology'>Delay in reporting</option>
+                                    <option class = 'Radiology'>Investigation delay</option>
+                                    <option class = 'Radiology'>Staff behaviour</option>
+                                    <option class = 'Security'>Staff behaviour</option>
+                                    <option class = 'Others'>General</option>
+                                    <option class = 'Others'>Hospital Management</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="comments" class = 'bmh-orange-txt font-weight-bold'>Comments</label>
+                            <textarea rows = "5" type="text" class="form-control" id="comments" name="description3"></textarea>
+                        </div>   
+                    </div>
+                    <button type="submit" class="btn bmh-blue-bg btn-block">Submit</button>
+            </form>
+
+        <!-- Submission confirmation modal -->
+        <div class="modal fade" id="submission" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 id = 'modal-heading' class="modal-title" id="exampleModalLongTitle">...</h5>
+                    </div>
+                    <div id = 'modal-text' class="modal-body">
+                    ...
+                    </div>
+                    <div  class="modal-footer justify-content-center">
+                        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                        <button type="button" class="btn bmh-blue-bg btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sorry for poor feedback modal -->
+        <div class="modal fade" id="poor-feedback" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">                        
+                        <div id = 'modal-text-poor-feedback' class="modal-body">
+                        ...
+                        </div>
+                        <div class="modal-footer justify-content-center">
+                            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                            <button type="button" class="btn bmh-blue-bg btn-block " data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+ 
+    
+
+
+			
+
+	</div>
+    <script type="text/javascript">
+        const url = "https://script.google.com/macros/s/AKfycbxfV2dMZjUx3975R6PMsTFUq9smjKTrsYt0RSAgZ32A_8v7sbk/exec";        
+        const form = document.forms.namedItem("myForm");
+        console.log(form);
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            createMessage();
+        })
+ 
+        function createMessage() {
+            console.log("submitted");
+            const formData = new FormData(form);
+            console.log(formData);
+            fetch(url, {
+                method: "POST"
+                , body: formData
+            }).then(function (response) {
+                return response.json()
+            }).then(function (data) {
+                console.log(data);
+                let heading = "";
+                let message = "";
+                if (data.status === 200) {
+                    heading = "Feedback submitted successfully!";
+                    message = "Your feedback is extremely important to us. Sharing your experience will help us\
+                    in our quest for providing a delightful experience for all our patients.";
+                    form.reset();
+                }
+                else {
+                    heading = "Submission failed!";
+                    message = "Sorry, something went wrong.";
+                }                
+                $('#modal-heading').html(heading);
+                $('#modal-text').html(message);                
+                $('#submission').modal('show');
+            })
+        }
+
+ 
+        //Update sub-category based on category selected
+        //Based on http://jsfiddle.net/Wa4ZF/9/ and https://stackoverflow.com/questions/20477406/filter-category-select-drop-down-based-on-another-drop-down-option
+        //Feedback 1
+        $(document).ready(function () {    
+            var allOptions = $('#sub-category1 option')
+            $('#category1').change(function () {
+                $('#sub-category1 option').remove()
+                var classN = $('#category1 option:selected').prop('class');
+                var opts = allOptions.filter('.' + classN);
+                $.each(opts, function (i, j) {
+                    $(j).appendTo('#sub-category1');
+                });
+            });
+        });
+
+        //Feedback 2
+        $(document).ready(function () {    
+            var allOptions = $('#sub-category2 option')
+            $('#category2').change(function () {
+                $('#sub-category2 option').remove()
+                var classN = $('#category2 option:selected').prop('class');
+                var opts = allOptions.filter('.' + classN);
+                $.each(opts, function (i, j) {
+                    $(j).appendTo('#sub-category2');
+                });
+            });
+        });
+
+        //Feedback 3
+        $(document).ready(function () {    
+            var allOptions = $('#sub-category3 option')
+            $('#category3').change(function () {
+                $('#sub-category3 option').remove()
+                var classN = $('#category3 option:selected').prop('class');
+                var opts = allOptions.filter('.' + classN);
+                $.each(opts, function (i, j) {
+                    $(j).appendTo('#sub-category3');
+                });
+            });
+        });
+
+        $(document).ready(function(){
+            $("#display1").click(function(){
+                $("#feedback1").fadeToggle();
+            });
+        });
+
+        $(document).ready(function(){
+            $(".feedback-btn").click(function(){
+                $('html, body').animate({scrollTop:$(document).height()}, 'slow');
+            });
+        });
+
+        $(document).ready(function(){
+            $(".excellent").click(function(){
+                $("#notification").html("<p class='text-justify'><em>We are happy to know that you are delighted with your experience at BMH. \
+                Please share your experience with us by clicking on the <strong>'Add Feedback'</strong> button below.<em></p>");
+                $("#notification").fadeIn();
+                $('html, body').animate({scrollTop:$(document).height()}, 'slow');
+            });
+        });
+
+        $(document).ready(function(){
+            $(".good").click(function(){
+                $("#notification").html("<p class='text-justify'><em>We are happy to know that you are satisfied with your experience at BMH. \
+                Please let us know how we can provide a delightful experience by clicking on the <strong>'Add Feedback'</strong> button below.<em></p>");
+                $("#notification").fadeIn();
+                $('html, body').animate({scrollTop:$(document).height()}, 'slow');
+            });
+        });
+
+        $(document).ready(function(){
+            $(".poor").click(function(){
+                var message_poor = '<em>We are sorry to hear that you are unsatisfied with your experience at BMH. \
+                Please let us know how we can improve by providing your valuable feedback.<em></p>'
+                // $("#notification").fadeIn();                
+                $("#comments1").prop('required',true);
+                $("#feedback-btn-1").click();
+                //$('#modal-heading').html(heading);
+                $('#modal-text-poor-feedback').html(message_poor);                
+                $('#poor-feedback').modal('show');
+                
+            });
+        });
+
+        </script>
+</body>
+ 
+</html>
