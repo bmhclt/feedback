@@ -4,6 +4,7 @@
     <title>IP Feedback Form</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#364cc9">
+    <link rel="stylesheet" href="css/all.min.css">  
     <script src="jquery-3.4.1.min.js"></script>
     <script src="jquery-migrate-1.4.1.min.js"></script>    
     <script src="bootstrap.min.js"></script>
@@ -147,6 +148,28 @@
         width: 200px !important;
         }
     }
+
+    .float{
+        position:fixed;
+        width:40px;
+        height:36px;
+        top:10px;
+        right:10px;
+        /* background-color:#F35724; */
+        color:#FFF;
+        border-radius:5px;
+        text-align:center;
+        /* box-shadow: 2px 2px 3px #FFF; */
+        box-shadow: 0 0 5px 2px rgba(179, 172, 236, 0.35);
+    }
+
+    .my-float{
+        margin-top:5px;
+        font-size: 26px;
+        
+    }
+
+    
 
     </style>
     <link rel="stylesheet" href="bootstrap.min.css">
@@ -563,10 +586,14 @@
 
     </div>
  
+    <a href="#" class="float">
+        <i class="fas fa-envelope my-float"></i>
+    </a>
+
 
 			
 
-		</div>
+	</div>
     <script type="text/javascript">
         const url = "https://script.google.com/macros/s/AKfycbxfV2dMZjUx3975R6PMsTFUq9smjKTrsYt0RSAgZ32A_8v7sbk/exec";        
         const form = document.forms.namedItem("myForm");
@@ -616,6 +643,7 @@
             var department = params.split('&')[6].replace(/%20/g, " ");
             var mobile = params.split('&')[7];
             var admNo = params.split('&')[8];
+            var link = params.split('&')[9];
         //Pre-fill form based on patient data
             document.getElementById('submitter').value = submitter;
             document.getElementById('name').value = name;
@@ -626,6 +654,18 @@
             document.getElementById('department').value = department;
             document.getElementById('mobile').value = mobile;
             document.getElementById('admNo').value = admNo;
+            document.getElementById('sms').href = "sms:"+mobile+"?body=Dear "+ name + 
+            ",%0a"+
+            "%0a"+"Thank you for choosing Baby Memorial Hospital for your healthcare needs. "+
+            "Please provide your valuable feedback based on your recent stay at BMH by clicking on the following link: "+
+            link+
+            "%0a"+
+            "%0a"+submitter+
+            ",%0a"+"Customer Relations Executive"+
+            ",%0a"+"Baby Memorial Hospital.";
+            document.getElementById('patient').innerHTML = '<i class="fas fa-user"></i> ' + patient;
+            document.getElementById('doctor').innerHTML = '<i class="far fa-comment-alt"></i> ' + feedback;
+            document.getElementById('phone').innerHTML = '<i class="fas fa-mobile-alt"></i>  ' + phone;
 
             console.log(admNo);
 
@@ -713,6 +753,9 @@
                 
             });
         });
+
+
+
 
 
         </script>
