@@ -124,7 +124,7 @@
         var feedback = params.split('&')[1].replace(/%20/g, " ");;
         var phone = params.split('&')[2];
         document.getElementById('call').href = "tel:"+phone;
-        document.getElementById('call').href = "sms:"+phone+"?body=Dear "+ patient + " Hope you had pleasant experience at BMH.";
+        document.getElementById('sms').href = "sms:"+phone+"?body=Dear "+ patient + ", Hope you had pleasant experience at BMH.";
         document.getElementById('patient').innerHTML = '<i class="fas fa-user"></i> ' + patient;
         document.getElementById('doctor').innerHTML = '<i class="far fa-comment-alt"></i> ' + feedback;
         document.getElementById('phone').innerHTML = '<i class="fas fa-mobile-alt"></i>  ' + phone;
