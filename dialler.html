@@ -127,13 +127,13 @@
         var designation = params.split('&')[4];
         document.getElementById('call').href = "tel:"+phone;
         document.getElementById('sms').href = "sms:"+phone+"?body=Dear "+ patient + 
-        "%0a"+
-        ",%0a"+"Hope you are recovering well after you recent stay at BMH. I would like to follow-up on a feedback you submitted at during your stay here. "+
+        ",%0a"+
+        "%0a"+"Hope you are recovering well after you recent stay at BMH. I would like to follow-up on a feedback you submitted at during your stay here. "+
         "I tried reaching you over the phone, but was unable to do so. Kindly let me know a suitable time to contact you to discuss further."+
         "%0a"+
         "%0a"+assignee+
         ",%0a"+designation+
-        ",%0a"+"Baby Memorial Hospital";
+        ",%0a"+"Baby Memorial Hospital.";
         document.getElementById('patient').innerHTML = '<i class="fas fa-user"></i> ' + patient;
         document.getElementById('doctor').innerHTML = '<i class="far fa-comment-alt"></i> ' + feedback;
         document.getElementById('phone').innerHTML = '<i class="fas fa-mobile-alt"></i>  ' + phone;
