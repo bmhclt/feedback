@@ -9,96 +9,90 @@
     <link rel="stylesheet" href="css/all.min.css">    
     <link rel="stylesheet" href="bootstrap.min.css">
     <style>
-            .button {
-             background-color: #c12446;
-             border: none;
-             color: white;
-             padding: 15px 32px;
-             text-align: center;
-             text-decoration: none;
-             display: inline-block;
-             font-size: 24px;
-             border-radius: 4px;
-             box-shadow: 0 6px 12px 0 rgba(0,0,0,0.2), 0 6px 14px 0 rgba(0,0,0,0.19);
-             display: block;
-             margin-left: auto;
-             margin-right: auto;
-             /* width: 40%;      */
-             margin-top: 15%;  
-             width: 90%; 
-             font-weight: bold;
-             }
-             
+        .button {
+            background-color: #c12446;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 24px;
+            border-radius: 4px;
+            box-shadow: 0 6px 12px 0 rgba(0,0,0,0.2), 0 6px 14px 0 rgba(0,0,0,0.19);
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            /* width: 40%;      */
+            margin-top: 10%;  
+            width: 90%; 
+            font-weight: bold;
+        }
+            
 
-             .tagline {
-             margin: 0;
-             padding: 20px;
-             padding-top: 0px;
-             text-align: center;
-             font-size: 12px;
-             background-color: #421ebc;
-             color: white;
-             font-style: italic;
-             font-weight: 400;
-             text-shadow: 1px 1px #000000;
-             }
+        .tagline {
+            margin: 0;
+            padding: 20px;
+            padding-top: 0px;
+            text-align: center;
+            font-size: 12px;
+            background-color: #421ebc;
+            color: white;
+            font-style: italic;
+            font-weight: 400;
+            text-shadow: 1px 1px #000000;
+        }
              
-             .sub-heading {
-             margin: auto;
-             padding: 10px;
-             font-size: 22px;
-             font-weight: 400;
-             }
+        .sub-heading {
+            margin: auto;
+            padding: 10px;
+            font-size: 22px;
+            font-weight: 400;
+        }
              
-             .content {
-             margin: 20px;
-             margin-top: 15%;
-             padding: 10px;
-             text-align: left;
-             color: #263238;
-             /* text-shadow: 1px 1px #dbdbdb; */
-             border-style: groove;
-             border-radius: 5px;        
-             }
+        .content {
+            margin: 20px;
+            margin-top: 15%;
+            padding: 10px;
+            text-align: left;
+            color: #263238;
+            /* text-shadow: 1px 1px #dbdbdb; */
+            border-style: groove;
+            border-radius: 5px;        
+        }
      
-/*      
-             html, body {
-                 margin:0;
-                 padding:0;
-                 font-family: sans-serif;
-             } */
-     
-             .bmh-blue-bg{
-             background-color: #364cc9 !important;
-             color: #ffffff !important;
-         }
-     
-         .bmh-orange-bg{
-             background-color: #F35724 !important;
-             color: #ffffff !important;
-         }
 
-         .jumbotron {
-        padding-bottom: 0.25rem !important;
-        padding-top: 0.75rem !important;
-        margin-bottom: 1rem !important;
+        .bmh-blue-bg{
+            background-color: #364cc9 !important;
+            color: #ffffff !important;
+        }
+        
+        .bmh-orange-bg{
+            background-color: #F35724 !important;
+            color: #ffffff !important;
+        }
+
+        .jumbotron {
+            padding-bottom: 0.25rem !important;
+            padding-top: 0.75rem !important;
+            margin-bottom: 1rem !important;
         }
 
         @media (min-width: 576px) {
             .jumbotron {
                 padding-bottom: 1rem !important;
-            padding-top: 1.5rem !important;
-            margin-bottom: 1.5rem !important;
+                padding-top: 1.5rem !important;
+                margin-bottom: 1.5rem !important;
             }
         }
 
         @media (min-width: 576px) {
             .logo {
-            width: 200px !important;
+                width: 200px !important;
             }
         }
      
-         </style>
+    </style>
 </head>
 <body>
     
@@ -118,7 +112,10 @@
             <h5 id="phone">Phone number</h5>
         </div>
         <div>
-            <a id="call" class="button" href="https://babymhospital.org"><i class="fas fa-phone"></i>  Click to call</a> 
+            <a id="call" class="button bmh-orange-bg" href="https://babymhospital.org"><i class="fas fa-phone"></i>  Click to call</a> 
+        </div>
+        <div>
+            <a id="sms" class="button bmh-blue-bg" href="https://babymhospital.org"><i class="fas fa-sms"></i>  Send SMS</a> 
         </div>
     </div>
     <script type="text/javascript">
@@ -127,6 +124,7 @@
         var feedback = params.split('&')[1].replace(/%20/g, " ");;
         var phone = params.split('&')[2];
         document.getElementById('call').href = "tel:"+phone;
+        document.getElementById('call').href = "sms:"+phone+"?body=Dear "+ patient + " Hope you had pleasant experience at BMH.";
         document.getElementById('patient').innerHTML = '<i class="fas fa-user"></i> ' + patient;
         document.getElementById('doctor').innerHTML = '<i class="far fa-comment-alt"></i> ' + feedback;
         document.getElementById('phone').innerHTML = '<i class="fas fa-mobile-alt"></i>  ' + phone;
