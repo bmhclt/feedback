@@ -150,12 +150,12 @@
     }
 
     .float{
-        position:fixed;
+        position:absolute;
         width:40px;
         height:36px;
         top:10px;
         right:10px;
-        /* background-color:#F35724; */
+        background-color:#364cc9;
         color:#FFF;
         border-radius:5px;
         text-align:center;
@@ -177,6 +177,9 @@
  
 <body>    
         <div class="jumbotron jumbotron-fluid bmh-blue-bg">
+                <a id ="sms" href="#" class="float">
+                        <i class="fas fa-envelope my-float"></i>
+                    </a>
                 <div class="container text-center">
                   <img src="logo 200.png" class="img-fluid rounded logo" alt="Responsive image" width = '150px'>
                   <h1 class="display-5 text-white pt-2">IP Feedback Form</h1>
@@ -586,9 +589,7 @@
 
     </div>
  
-    <a id ="sms" href="#" class="float">
-        <i class="fas fa-envelope my-float"></i>
-    </a>
+    
 
 
 			
@@ -633,7 +634,7 @@
         }
 
         //Get patient details from URL parameters
-            var params = location.href.replace(/%20&%20/g, " AND ").split("?")[1];
+            var params = location.href.replace(/%20&%20/g, " AND ").split("?")[1]; //To correct issue with '&' in OBG
             var submitter = params.split('&')[0].replace(/%20/g, " ");
             var name = params.split('&')[1].replace(/%20/g, " ");
             var uhid = params.split('&')[2];
