@@ -633,7 +633,7 @@
             })
         }
 
-        //Get patient details from URL parameters
+        //Get patient details from URL parameters (using &)
             var params = location.href.replace(/%20&%20/g, " AND ").split("?")[1]; //To correct issue with '&' in OBG
             var submitter = params.split('&')[0].replace(/%20/g, " ");
             var name = params.split('&')[1].replace(/%20/g, " ");
@@ -646,6 +646,21 @@
             var admNo = params.split('&')[8];
             var link = params.split('&')[9];
             var link = window.location.href;
+
+        //Get patient details from URL parameters (using /)
+            var params = location.href.replace(/%20&%20/g, " AND ").split("?")[1]; //To correct issue with '&' in OBG
+            var submitter = params.split('/')[0].replace(/%20/g, " ");
+            var name = params.split('/')[1].replace(/%20/g, " ");
+            var uhid = params.split('/')[2];
+            var ward = params.split('/')[3];
+            var room = params.split('/')[4];
+            var doctor = params.split('/')[5].replace(/%20/g, " ");
+            var department = params.split('/')[6].replace(/%20/g, " ");
+            var mobile = params.split('/')[7];
+            var admNo = params.split('/')[8];
+            var link = params.split('/')[9];
+            var link = window.location.href;
+
         //Pre-fill form based on patient data
             document.getElementById('submitter').value = submitter;
             document.getElementById('name').value = name;
@@ -666,7 +681,7 @@
             // ",%0a"+"Customer Relations Executive"+
             // ",%0a"+"Baby Memorial Hospital.";
 
-            document.getElementById('sms').href = encodeURI('https://wa.me/?text=' +
+            document.getElementById('sms').href = 'https://wa.me/?text=' +
             "Dear "+ name + 
             ",%0a"+
             "%0a"+"Thank you for choosing Baby Memorial Hospital for your healthcare needs. "+
@@ -675,7 +690,7 @@
             "%0a"+
             "%0a"+submitter+
             ",%0a"+"Customer Relations Executive"+
-            ",%0a"+"Baby Memorial Hospital.");
+            ",%0a"+"Baby Memorial Hospital.";
 
             // 'https://wa.me/whatsappphonenumber/?text=urlencodedtext'
             // 'https://wa.me/?text=urlencodedtext'
