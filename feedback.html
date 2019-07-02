@@ -666,7 +666,7 @@
             // ",%0a"+"Customer Relations Executive"+
             // ",%0a"+"Baby Memorial Hospital.";
 
-            document.getElementById('sms').href = 'https://wa.me/?text=' +
+            document.getElementById('sms').href = encodeURI('https://wa.me/?text=' +
             "Dear "+ name + 
             ",%0a"+
             "%0a"+"Thank you for choosing Baby Memorial Hospital for your healthcare needs. "+
@@ -675,7 +675,7 @@
             "%0a"+
             "%0a"+submitter+
             ",%0a"+"Customer Relations Executive"+
-            ",%0a"+"Baby Memorial Hospital.";
+            ",%0a"+"Baby Memorial Hospital.");
 
             // 'https://wa.me/whatsappphonenumber/?text=urlencodedtext'
             // 'https://wa.me/?text=urlencodedtext'
