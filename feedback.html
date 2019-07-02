@@ -644,7 +644,8 @@
             var department = params.split('&')[6].replace(/%20/g, " ");
             var mobile = params.split('&')[7];
             var admNo = params.split('&')[8];
-            var link = params.split('&')[9];
+            // var link = params.split('&')[9];
+            var link = window.location.href;
         //Pre-fill form based on patient data
             document.getElementById('submitter').value = submitter;
             document.getElementById('name').value = name;
