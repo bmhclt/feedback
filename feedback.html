@@ -634,31 +634,41 @@
         }
 
         //Get patient details from URL parameters (using &)
-            var params = location.href.replace(/%20&%20/g, " AND ").split("?")[1]; //To correct issue with '&' in OBG
-            var submitter = params.split('&')[0].replace(/%20/g, " ");
-            var name = params.split('&')[1].replace(/%20/g, " ");
-            var uhid = params.split('&')[2];
-            var ward = params.split('&')[3];
-            var room = params.split('&')[4];
-            var doctor = params.split('&')[5].replace(/%20/g, " ");
-            var department = params.split('&')[6].replace(/%20/g, " ");
-            var mobile = params.split('&')[7];
-            var admNo = params.split('&')[8];
-            var link = params.split('&')[9];
-            var link = window.location.href;
+            // var params = location.href.replace(/%20&%20/g, " AND ").split("?")[1]; //To correct issue with '&' in OBG
+            // var submitter = params.split('&')[0].replace(/%20/g, " ");
+            // var name = params.split('&')[1].replace(/%20/g, " ");
+            // var uhid = params.split('&')[2];
+            // var ward = params.split('&')[3];
+            // var room = params.split('&')[4];
+            // var doctor = params.split('&')[5].replace(/%20/g, " ");
+            // var department = params.split('&')[6].replace(/%20/g, " ");
+            // var mobile = params.split('&')[7];
+            // var admNo = params.split('&')[8];
+            // var link = params.split('&')[9];
+            // var link = window.location.href;
 
         //Get patient details from URL parameters (using /)
             var params = location.href.replace(/%20&%20/g, " AND ").split("?")[1]; //To correct issue with '&' in OBG
             var submitter = params.split('/')[0].replace(/%20/g, " ");
+            console.log(submitter);
             var name = params.split('/')[1].replace(/%20/g, " ");
+            console.log(name);
             var uhid = params.split('/')[2];
+            console.log(uhid);
             var ward = params.split('/')[3];
+            console.log(ward);
             var room = params.split('/')[4];
+            console.log(room);
             var doctor = params.split('/')[5].replace(/%20/g, " ");
+            console.log(doctor);
             var department = params.split('/')[6].replace(/%20/g, " ");
+            console.log(department);
             var mobile = params.split('/')[7];
+            console.log(mobile);
             var admNo = params.split('/')[8];
+            console.log(admNo);
             var link = params.split('/')[9];
+            console.log(link);
             var link = window.location.href;
 
         //Pre-fill form based on patient data
