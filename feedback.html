@@ -648,7 +648,7 @@
             // var link = window.location.href;
 
         //Get patient details from URL parameters (using /)
-            var params = location.href.replace(/%20&%20/g, " AND ").split("?")[1]; //To correct issue with '&' in OBG
+            var params = location.href.replace(/%20&%20/g, " AND ").replace("-", " ").split("?")[1]; //To correct issue with '&' in OBG
             var submitter = params.split('/')[0].replace(/%20/g, " ");
             console.log(submitter);
             var name = params.split('/')[1].replace(/%20/g, " ");
@@ -668,7 +668,7 @@
             var admNo = params.split('/')[8];
             console.log(admNo);
             // var link = params.split('/')[9];            
-            var link = window.location.href.replace(" ", /%20/g);
+            var link = window.location.href.replace(" ", "-");
             console.log(link);
 
         //Pre-fill form based on patient data
