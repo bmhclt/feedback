@@ -668,7 +668,7 @@
             var admNo = params.split('/')[8];
             console.log(admNo);
             // var link = params.split('/')[9];            
-            var link = window.location.href.replace(" ", "-");
+            var link = window.location.href.replace(/%20/g, "-");
             console.log(link);
 
         //Pre-fill form based on patient data
