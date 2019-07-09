@@ -648,7 +648,7 @@
             // var link = window.location.href;
 
         //Get patient details from URL parameters (using /)
-            var params = location.href.replace(/%20&%20/g, " AND ").replace(/-/g, " ").split("?")[1]; //To correct issue with '&' in OBG
+            var params = location.href.replace(/%20&%20/g, " AND ").replace(/-/g, " ").replace(/%7C/g, "|").split("?")[1]; //To correct issue with '&' in OBG
             var submitter = params.split('|')[0].replace(/%20/g, " ");
             console.log(submitter);
             var name = params.split('|')[1].replace(/%20/g, " ");
