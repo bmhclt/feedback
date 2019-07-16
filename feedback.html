@@ -658,7 +658,7 @@
             console.log(uhid);
             var ward = params.split('|')[3];
             console.log(ward);
-            var room = params.split('|')[4];
+            var room = params.split('|')[4].replace(/%20/g, " ");
             console.log(room);
             var doctor = params.split('|')[5].replace(/%20/g, " ");
             console.log(doctor);
