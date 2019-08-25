@@ -10,44 +10,14 @@
     <style>
         #nps label {
             float:left;
-            width:10%;            
-            /* margin:4px; */
-            /* background-color:#EFEFEF; */
-            /* border-radius:4px; */
+            width:50%;
             border:1px solid #78909c;
             overflow:auto;
-            /* font-size: 0 !important; */
-            /* margin: 0 !important; */
-            /* padding: 0 !important;
-            margin: auto; */
-            margin-bottom:20px;
             color:#F7F7F7;
             font-weight: 550;
             text-shadow: white 1px 1px 2px;
             
         }
-
-        .red {
-            background-color:#ffbcaf;
-        }
-
-        .orange {
-            background-color:#ffd180;
-        }
-
-        .yellow {
-            background-color:#ffff8d;
-        }
-      
-        .green1 {
-            background-color:#cfff95;
-        }
-
-        .green2 {
-            background-color:#98ee99;
-        }
-
-
 
         #nps label span {
             text-align:center;
@@ -58,9 +28,7 @@
 
         #nps label input {
             position:absolute;
-            top:-20px;
-            /* visibility: hidden; */
-            display:none;
+            opacity:0.0;
         }
 
         #nps input:checked + span {
@@ -76,11 +44,6 @@
 
         .hide-me[aria-expanded="true"] {display: none;}
 
-        /* .add-feedback {
-            background-color:#0277bd !important;
-            color:#F7F7F7 !important;
-
-        } */
 
         .bmh-blue-bg{
         background-color: #364cc9 !important;
@@ -181,40 +144,27 @@
                       <input type="text" class="form-control" id="name" name="name" required>                      
                     </div>
                     <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                      <label for="uhid" class = 'bmh-blue-txt font-weight-bold'>Mobile Number</label>
+                      <label for="mobile" class = 'bmh-blue-txt font-weight-bold'>Mobile Number</label>
                       <input type="tel" class="form-control" id="mobile" name="mobile" maxlength="10"  pattern="[0-9]{10}" required>                      
+                    </div>                    
+                    <div class="form-group col-12" id = "nps">
+                        <p class='text-justify bmh-blue-txt font-weight-bold'>Are you currently admitted at BMH?</p>
+                        <label class="nps-btn yes"><input type="radio" name="admitted" value = "Yes" required><span>Yes</span></label>
+                        <label class="nps-btn no"><input type="radio" name="admitted" value = "No" required><span>No</span></label>
+                    </div>                   
+                    <div class="form-group col-12 collapse" id="uhid">
+                        <label for="uhid" class = 'bmh-blue-txt font-weight-bold'>UHID</label>
+                        <input type="text" class="form-control" name="uhid" maxlength="20">                      
                     </div>
-                    <!-- <div id="mobile">
-                        <div class="input">
-                          <div class="label">
-                            <div class="label-1">
-                              <span id="mobile-valid" class="hidden mob">
-                                  <i class="fa fa-check pwd-valid"></i>Valid Mobile No
-                              </span>  
-                              <span id="folio-invalid" class="hidden mob-helpers">
-                                  <i class="fa fa-times mobile-invalid"></i>Invalid mobile No
-                              </span>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-xs-3">
-                              <div class="label-2">
-                                Mobile No
-                              </div>
-                            </div>
-                            <div class="col-xs-9">
-                              <input id="mobile" type="text" class="form-control form-change-element" />
-                            </div>
-                          </div>
-                        </div>
-                      </div> -->
+                    <div class="form-group col-12 collapse" id="room">
+                        <label for="room" class = 'bmh-blue-txt font-weight-bold'>Room No.</label>
+                        <input type="text" class="form-control" name="room" maxlength="10">                      
+                    </div>
                     <div class="form-group col-12">
-                        <label for="uhid" class = 'bmh-blue-txt font-weight-bold'>Comments</label>
+                        <label for="comments" class = 'bmh-blue-txt font-weight-bold'>Comments</label>
                         <textarea class="form-control" id="comments" name="comments" rows="5" required></textarea>                      
-                      </div>
-                </div>                    
-
- 
+                    </div>                    
+                </div>     
                     <button type="submit" class="btn bmh-orange-bg btn-block">Submit</button>
             </form>
 
@@ -281,33 +231,22 @@
         }
 
         $(document).ready(function(){
-  
-        // $("#mobile").on("blur", function(){
-        //     var mobNum = $(this).val();
-        //     var filter = /^\d*(?:\.\d{1,2})?$/;
+            $(".yes").click(function(){              
+                $("#room").prop('required',true);
+                $("#room").fadeIn();              
+                $("#uhid").hide();
+                $("#uhid").prop('required',false);
+            });
+        });
 
-        //     if (filter.test(mobNum)) {
-        //         if(mobNum.length==10){
-        //             alert("valid");
-        //         $("#mobile-valid").removeClass("hidden");
-        //         $("#folio-invalid").addClass("hidden");
-        //         } else {
-        //             alert('Please put 10  digit mobile number');
-        //         $("#folio-invalid").removeClass("hidden");
-        //         $("#mobile-valid").addClass("hidden");
-        //             return false;
-        //         }
-        //         }
-        //         else {
-        //         alert('Not a valid number');
-        //         $("#folio-invalid").removeClass("hidden");
-        //         $("#mobile-valid").addClass("hidden");
-        //         return false;
-        //     }
-    
-        // });
-  
-});
+        $(document).ready(function(){
+            $(".no").click(function(){              
+                $("#uhid").prop('required',true);
+                $("#uhid").fadeIn();
+                $("#room").hide();  
+                $("#room").prop('required',false);           
+            });
+        });
 
 
         </script>
