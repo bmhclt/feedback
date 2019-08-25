@@ -154,11 +154,11 @@
                     </div>                   
                     <div class="form-group col-12 collapse" id="uhid">
                         <label for="uhid" class = 'bmh-blue-txt font-weight-bold'>UHID</label>
-                        <input type="text" class="form-control" name="uhid" maxlength="20">                      
+                        <input type="text" class="form-control" id="uhid2" name="uhid" maxlength="20">                      
                     </div>
                     <div class="form-group col-12 collapse" id="room">
                         <label for="room" class = 'bmh-blue-txt font-weight-bold'>Room No.</label>
-                        <input type="text" class="form-control" name="room" maxlength="10">                      
+                        <input type="text" class="form-control" id="room2" name="room" maxlength="10">                      
                     </div>
                     <div class="form-group col-12">
                         <label for="comments" class = 'bmh-blue-txt font-weight-bold'>Comments</label>
@@ -233,19 +233,19 @@
 
         $(document).ready(function(){
             $(".yes").click(function(){              
-                $("#room").prop('required',true);
+                $("#room2").prop('required',true);
                 $("#room").fadeIn();              
                 $("#uhid").hide();
-                $("#uhid").prop('required',false);
+                $("#uhid2").prop('required',false);
             });
         });
 
         $(document).ready(function(){
             $(".no").click(function(){              
-                $("#uhid").prop('required',true);
+                $("#uhid2").prop('required',true);
                 $("#uhid").fadeIn();
                 $("#room").hide();  
-                $("#room").prop('required',false);           
+                $("#room2").prop('required',false);           
             });
         });
 

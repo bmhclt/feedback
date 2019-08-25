@@ -222,7 +222,7 @@
                                     <option class = 'Security'>Security</option>
                                     <option class = 'Others'>Others</option>
                                 </select>
-                            </div>  
+                            </div> 
                             <div class="form-group col-12 col-md-6">
                                 <label for="sub_category" class = 'bmh-blue-txt font-weight-bold'>Feedback Sub-category</label>
                                 <select class="form-control sub_category" id="sub_category" name="sub_category">
@@ -285,18 +285,26 @@
                                     <option class = 'Others'>Birth & Death registration</option>                                    
                                 </select>
                             </div>
+                        </div>  
+                        <div class = 'row'>                             
+                            <div class="form-group col-12 col-md-6">
+                                <label for="type" class = 'bmh-blue-txt font-weight-bold'>Type</label>
+                                <select class="form-control type " id="type" name="type">                                
+                                <option class = ' '>Complaint</option>
+                                <option class = ' '>Suggestion</option>
+                                <option class = ' '>Compliment</option>
+                                </select>
+                            </div>
                             
-                                                        
-                        </div>
-                        <div class="form-group">
-                            <label for="category1" class = 'bmh-blue-txt font-weight-bold'>Status</label>
-                            <select class="form-control clStatus " id="clStatus" name="clStatus">
-                            <option class = ' '>Select Status</option>
-                            <option class = ' '>In-progress</option>
-                            <option class = ' '>Resolved</option>
-                            <option class = ' '>Voice of Customer</option>
-                            </select>
-                        </div>     
+                            <div class="form-group col-12 col-md-6">
+                                <label for="clStatus" class = 'bmh-blue-txt font-weight-bold'>Status</label>
+                                <select class="form-control clStatus " id="clStatus" name="clStatus">
+                                <option class = ' '>Resolved</option>
+                                <option class = ' '>In-progress</option>
+                                <option class = ' '>Voice of Customer</option>
+                                </select>
+                            </div>                      
+                        </div>  
                         <div class="form-group">
                             <label for="comments" class = 'bmh-blue-txt font-weight-bold'>Closure Comments</label>
                             <textarea rows = "5" type="text" class="form-control" id="comments" name="comments"></textarea>                      
@@ -400,21 +408,6 @@
             });
         });
 
-
-
-
-        $(document).ready(function(){
-            $("#smart-reply1").click(function(){
-                $("#clStatus").val("Resolved");
-                $("#submit-close").fadeTo("fast", 0.1);
-                $("#smart-reply2").fadeTo("fast", 0.2);
-                $("#smart-reply3").fadeTo("fast", 0.2);
-                var smart_message =  $("#smart-reply1").text();
-                document.getElementById('comments').innerText = smart_message;                
-            });
-        });
-
-        
  
         </script>
 </body>
