@@ -28,6 +28,7 @@
 
         #nps label input {
             position:absolute;
+            left:100px;
             opacity:0.0;
         }
 
@@ -133,7 +134,7 @@
                 If you have any suggestions / feedback to help us provide you a delightful experience, 
                 please let us know using the form below.
             </h5>
-            <form name="myForm">
+            <form name="myForm" id='myForm'>
                 <input type="hidden" id="form_name" name="form_name" value="feedback">
                 <div class="row">
                     <div class="form-group d-none">
@@ -249,6 +250,12 @@
             });
         });
 
+
+        //Disable button on submit
+        $('#myForm').submit(function(){
+            $(this).find(':button[type=submit]').prop('disabled', true);
+            $(this).find(':button[type=submit]').html('Submitting...');
+        });
 
         </script>
 </body>
