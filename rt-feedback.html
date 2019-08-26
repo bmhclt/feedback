@@ -8,7 +8,7 @@
     <script src="jquery-migrate-1.4.1.min.js"></script>    
     <script src="bootstrap.min.js"></script>
     <style>
-        #nps label {
+        .nps label {
             float:left;
             width:50%;
             border:1px solid #78909c;
@@ -19,27 +19,27 @@
             
         }
 
-        #nps label span {
+        .nps label span {
             text-align:center;
             font-size: 20px;
             padding:5x;
             display:block;
         }
 
-        #nps label input {
+        .nps label input {
             position:absolute;
-            left:100px;
+            left:10px;
             opacity:0.0;
         }
 
-        #nps input:checked + span {
+        .nps input:checked + span {
             background-color:#288cff;
             color:#F7F7F7;
             text-shadow: blue 1px 1px 2px;
         }
 
 
-        #nps .nps-btn {
+        .nps .nps-btn {
             color:#333;
         }
 
@@ -129,44 +129,53 @@
                 </div>
         </div>
         <div class = 'container'>
-            <h5 class='text-justify bmh-blue-txt font-weight-bold pb-3'>
+            <div class="form-group col-12 nps">
+                <label class="nps-btn english"><input type="radio" name="admitted" value = "English" checked><span>English</span></label>
+                <label class="nps-btn malayalam"><input type="radio" name="admitted" value = "മലയാളം" ><span>മലയാളം</span></label>
+            </div>  
+            <h5 class='text-justify bmh-blue-txt font-weight-bold pb-3' id='heading-eng'>
                 BMH is committed to providing the best possible care for you and your family. 
                 If you have any suggestions / feedback to help us provide you a delightful experience, 
                 please let us know using the form below.
             </h5>
+            <h6 class='text-left bmh-blue-txt  pb-3 collapse' id='heading-mal'>
+                നിങ്ങൾക്കും നിങ്ങളുടെ കുടുംബത്തിനും ഏറ്റവും മികച്ച പരിചരണം
+                നൽകാൻ ബി‌എം‌എച്ച് പ്രതിജ്ഞാബദ്ധമാണ്. നിങ്ങൾക്ക് വളരെ നല്ല ഒരു അനുഭവം നൽകാൻ ഞങ്ങളെ സഹായിക്കുന്നതിന് 
+                നിങ്ങൾക്ക് എന്തെങ്കിലും നിർദ്ദേശങ്ങൾ / ഫീഡ്‌ബാക്ക് ഉണ്ടെങ്കിൽ, ചുവടെയുള്ള ഫോം ഉപയോഗിച്ച് ഞങ്ങളെ അറിയിക്കുക.
+            </h6>
             <form name="myForm" id='myForm'>
                 <input type="hidden" id="form_name" name="form_name" value="feedback">
-                <div class="row">
+                <div class="row"> 
                     <div class="form-group d-none">
                       <input type="text" class="form-control" id="submitter" name="submitter">                      
                     </div>
                     <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                      <label for="name" class = 'bmh-blue-txt font-weight-bold'>Name</label>
+                      <label for="name" class = 'bmh-blue-txt font-weight-bold' id='name-label'>Name</label>
                       <input type="text" class="form-control" id="name" name="name" required>                      
                     </div>
                     <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                      <label for="mobile" class = 'bmh-blue-txt font-weight-bold'>Mobile Number</label>
+                      <label for="mobile" class = 'bmh-blue-txt font-weight-bold' id='mobile-label'>Mobile Number</label>
                       <input type="tel" class="form-control" id="mobile" name="mobile" maxlength="10"  pattern="[0-9]{10}" required>                      
                     </div>                    
-                    <div class="form-group col-12" id = "nps">
-                        <p class='text-justify bmh-blue-txt font-weight-bold'>Are you currently admitted at BMH?</p>
-                        <label class="nps-btn yes"><input type="radio" name="admitted" value = "Yes" required><span>Yes</span></label>
-                        <label class="nps-btn no"><input type="radio" name="admitted" value = "No" required><span>No</span></label>
+                    <div class="form-group col-12 nps">
+                        <p class='text-left bmh-blue-txt font-weight-bold' id='admission-label'>Are you currently admitted at BMH?</p>
+                        <label class="nps-btn yes"><input type="radio" name="admitted" value = "Yes" required><span id='yes-label'>Yes</span></label>
+                        <label class="nps-btn no"><input type="radio" name="admitted" value = "No" required><span id='no-label'>No</span></label>
                     </div>                   
                     <div class="form-group col-12 collapse" id="uhid">
-                        <label for="uhid" class = 'bmh-blue-txt font-weight-bold'>UHID</label>
+                        <label for="uhid" class = 'bmh-blue-txt font-weight-bold' id='uhid-label'>Hospital Number (UHID)</label>
                         <input type="text" class="form-control" id="uhid2" name="uhid" maxlength="20">                      
                     </div>
                     <div class="form-group col-12 collapse" id="room">
-                        <label for="room" class = 'bmh-blue-txt font-weight-bold'>Room No.</label>
+                        <label for="room" class = 'bmh-blue-txt font-weight-bold' id='room-label'>Room No.</label>
                         <input type="text" class="form-control" id="room2" name="room" maxlength="10">                      
                     </div>
                     <div class="form-group col-12">
-                        <label for="comments" class = 'bmh-blue-txt font-weight-bold'>Comments</label>
+                        <label for="comments" class = 'bmh-blue-txt font-weight-bold' id='comments-label'>Comments</label>
                         <textarea class="form-control" id="comments" name="comments" rows="5" required></textarea>                      
                     </div>                    
                 </div>     
-                    <button type="submit" class="btn bmh-orange-bg btn-block">Submit</button>
+                    <button type="submit" class="btn bmh-orange-bg btn-block" id='submit'>Submit</button>
             </form>
 
         <!-- Submission confirmation modal -->
@@ -174,10 +183,12 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 id = 'modal-heading' class="modal-title" id="exampleModalLongTitle">...</h5>
+                        <h5 id = 'modal-heading' class="modal-title" id="exampleModalLongTitle">Feedback submitted successfully!</h5>
                     </div>
                     <div id = 'modal-text' class="modal-body">
-                    ...
+                        Your feedback is extremely important to us. Our Patient Care Coordinator
+                        will be contacting you soon. In case of emergency, please contact the
+                        Shift Supervisor at +91 97472 00002.
                     </div>
                     <div  class="modal-footer justify-content-center">
                         <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
@@ -216,18 +227,18 @@
                 let heading = "";
                 let message = "";
                 if (data.status === 200) {
-                    heading = "Feedback submitted successfully!";
-                    message = "Your feedback is extremely important to us. Our Patient Care Coordinator\
-                    will be contacting you soon. In case of emergency, please contact the \
-                    Shift Supervisor at +91 97472 00002.";
+                    // heading = "Feedback submitted successfully!";
+                    // message = "Your feedback is extremely important to us. Our Patient Care Coordinator\
+                    // will be contacting you soon. In case of emergency, please contact the \
+                    // Shift Supervisor at +91 97472 00002.";
                     form.reset();
                 }
                 else {
                     heading = "Submission failed!";
                     message = "Sorry, something went wrong.";
                 }                
-                $('#modal-heading').html(heading);
-                $('#modal-text').html(message);                
+                // $('#modal-heading').html(heading);
+                // $('#modal-text').html(message);                
                 $('#submission').modal('show');
             })
         }
@@ -254,7 +265,51 @@
         //Disable button on submit
         $('#myForm').submit(function(){
             $(this).find(':button[type=submit]').prop('disabled', true);
-            $(this).find(':button[type=submit]').html('Submitting...');
+            // $(this).find(':button[type=submit]').html('Submitting...');
+        });
+
+        $(document).ready(function(){
+            $(".malayalam").click(function(){              
+                $("#heading-mal").fadeIn();
+                $("#heading-eng").hide(); 
+                $('#name-label').text('പേര്');
+                $('#mobile-label').text('മൊബൈൽ');
+                $('#admission-label').text('താങ്കൾ ഇപ്പോൾ ബി‌എം‌എച്ചിൽ അഡ്‌മിറ്റെഡ് ആണോ?');                
+                $('#yes-label').text('അതെ');
+                $('#no-label').text('അല്ല');
+                $('#uhid-label').text('ആശുപത്രി നമ്പർ (UHID)');
+                $('#room-label').text('മുറി നമ്പർ');
+                $('#comments-label').text('അഭിപ്രായങ്ങൾ');
+                $('#submit').text('സമർപ്പിക്കുക');
+                heading = "ഫീഡ്‌ബാക്ക് സമർപ്പിച്ചു!";
+                message = "നിങ്ങളുടെ ഫീഡ്‌ബാക്ക് ഞങ്ങൾക്ക് വളരെ പ്രധാനമാണ്. ഞങ്ങളുടെ പേഷ്യന്റ് കെയർ കോർഡിനേറ്റർ \
+                ഉടൻ നിങ്ങളുമായി ബന്ധപ്പെടും. അടിയന്തിര സാഹചര്യങ്ങളിൽ, +91 97472 00002 എന്ന നമ്പറിൽ ഷിഫ്റ്റ് \
+                സൂപ്പർവൈസറുമായി ബന്ധപ്പെടുക.";
+                $('#modal-heading').html(heading);
+                $('#modal-text').html(message);  
+            });
+        });
+
+        $(document).ready(function(){
+            $(".english").click(function(){              
+                $("#heading-eng").fadeIn();
+                $("#heading-mal").hide(); 
+                $('#name-label').text('Name');
+                $('#mobile-label').text('Mobile Number');
+                $('#admission-label').text('Are you currently admitted at BMH?');
+                $('#yes-label').text('Yes');
+                $('#no-label').text('No')
+                $('#uhid-label').text('Hospital Number (UHID)');
+                $('#room-label').text('Room No.');
+                $('#comments-label').text('Comments');
+                $('#submit').text('Submit');
+                heading = "Feedback submitted successfully!";
+                message = "Your feedback is extremely important to us. Our Patient Care Coordinator\
+                will be contacting you soon. In case of emergency, please contact the \
+                Shift Supervisor at +91 97472 00002.";
+                $('#modal-heading').html(heading);
+                $('#modal-text').html(message);  
+            });
         });
 
         </script>
