@@ -191,7 +191,7 @@
                 </div> 
             </div> 
 
-            <form name="close-form">    
+            <form name="close-form" id = 'close-form'>    
                 <input type="hidden" name="form_name" value="close">
                     <input type="hidden" name="feedbackID" class="feedbackID" id = 'feedbackID' value=" ">
                     <div class = " " id = 'close-form'>
@@ -408,6 +408,11 @@
             });
         });
 
+        //Disable button on submit
+        $('#close-form').submit(function(){
+            $(this).find(':button[type=submit]').prop('disabled', true);
+            // $(this).find(':button[type=submit]').html('Submitting...');
+        });
  
         </script>
 </body>

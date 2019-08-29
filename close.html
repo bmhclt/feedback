@@ -249,7 +249,7 @@
                     Mark as Voice of Customer
             </button>  -->
 
-            <form name="reassign-form">    
+            <form name="reassign-form" id = 'reassign-form0'>    
                     <input type="hidden" name="form_name" value="reassign">
                     <input type="hidden" name="feedbackID" class="feedbackID" id = 'feedbackID' value=" ">
                     <div class = "collapse" id = 'reassign-form'>
@@ -352,7 +352,7 @@
                     </div>                     
             </form>
 
-            <form name="close-form">    
+            <form name="close-form" id = 'close-form0'>    
                     <input type="hidden" name="form_name" value="close">
                     <input type="hidden" name="feedbackID" class="feedbackID" value=" ">
                     <div class = "collapse" id = 'close-form'>
@@ -575,7 +575,17 @@
             });
         });
         
-        
+        //Disable button on submit
+        $('#close-form0').submit(function(){
+            $(this).find(':button[type=submit]').prop('disabled', true);
+            // $(this).find(':button[type=submit]').html('Submitting...');
+        });
+
+        //Disable button on submit
+        $('#reassign-form0').submit(function(){
+            $(this).find(':button[type=submit]').prop('disabled', true);
+            // $(this).find(':button[type=submit]').html('Submitting...');
+        });
 
  
         </script>
