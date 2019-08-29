@@ -202,7 +202,7 @@
                 </div>
             </div> 
  
-            <form name="capaClose">    
+            <form name="capaClose" id = 'capaClose0'>    
                 <input type="hidden" name="form_name" value="capaClose">
                 <input type="hidden" id="capaIDfield" name="capaIDfield" value=" ">
                 <div id = 'capaClose'>
@@ -297,6 +297,12 @@
             document.getElementById('catSubcat').innerText = catSubcat;
             document.getElementById('complaintCount').innerText = complaintCount;
             document.getElementById('reviewComments').innerText = reviewComments;
+
+        //Disable button on submit
+            $('#capaClose0').submit(function(){
+            $(this).find(':button[type=submit]').prop('disabled', true);
+            // $(this).find(':button[type=submit]').html('Submitting...');
+            });
  
         </script>
 </body>
